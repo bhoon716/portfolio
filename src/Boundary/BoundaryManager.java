@@ -2,14 +2,15 @@ package Boundary;
 
 import javax.swing.*;
 
-public class BounbaryManager {
+public class BoundaryManager {
 
     private JFrame frame;
     private JPanel currentBoundary;
 
-    public BounbaryManager() {
+    public BoundaryManager() {
         frame = new JFrame("Portfolio Manager");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 800);
         frame.setVisible(true);
     }
 
