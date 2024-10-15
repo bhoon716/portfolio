@@ -1,6 +1,7 @@
 package Boundary;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class BoundaryManager {
 
@@ -10,7 +11,8 @@ public class BoundaryManager {
     public BoundaryManager() {
         frame = new JFrame("Portfolio Manager");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 800);
+        frame.setLayout(new FlowLayout());
+        frame.setPreferredSize(new Dimension(800, 600));
         frame.setVisible(true);
     }
 
@@ -22,5 +24,7 @@ public class BoundaryManager {
         frame.add(currentBoundary);
         frame.revalidate();
         frame.repaint();
+        frame.pack();
+        frame.setVisible(true);
     }
 }

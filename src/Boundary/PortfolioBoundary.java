@@ -4,10 +4,10 @@ import javax.swing.*;
 
 public class PortfolioBoundary extends JPanel {
 
-    private final BoundaryManager manager;
+    private final BoundaryManager boundaryManager;
 
-    public PortfolioBoundary(BoundaryManager manager) {
-        this.manager = manager;
+    public PortfolioBoundary(BoundaryManager boundaryManager) {
+        this.boundaryManager = boundaryManager;
 
         JLabel label = new JLabel("Portfolio");
         add(label);
