@@ -1,16 +1,17 @@
 package Entity;
 
 public abstract class Asset {
+    private String symbol;       // 자산의 심볼 (e.g., AAPL, BTC)
+    private Double quantity;     // 보유한 수량
+    private Double purchasePrice;
+    private Double currentPrice;
 
-    protected String symbol;
-
-    public Asset(String name) {
-        this.symbol = name;
+    public Asset(String symbol, Double quantity, Double purchasePrice, Double currentPrice) {
+        this.symbol = symbol;
+        this.quantity = quantity;
+        this.purchasePrice = purchasePrice;
+        this.currentPrice = currentPrice;
     }
-
-    public String getSymbol(){
-        return symbol;
-    };
 
     public abstract Double getValue();
 }

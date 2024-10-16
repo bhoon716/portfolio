@@ -12,6 +12,7 @@ public class StockBoundary extends JPanel {
 
     public StockBoundary(BoundaryManager boundaryManager, AppControl appControl) {
         this.boundaryManager = boundaryManager;
+        this.appControl = appControl;
 
         setSize(800, 600);
         setLayout(new FlowLayout());
@@ -22,6 +23,7 @@ public class StockBoundary extends JPanel {
 
         JButton button = new JButton("switch MainBoundary");
         add(button);
+        button.addActionListener(e -> switchMainBoundary());
     }
 
     public void switchMainBoundary() {

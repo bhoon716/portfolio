@@ -10,7 +10,7 @@ public class Main {
         AppControl appControl = new AppControl();
         BoundaryManager boundaryManager = new BoundaryManager();
 
-        // 첫 화면 출력
+        // 첫 화면
         boundaryManager.switchBoundary(new StockBoundary(boundaryManager, appControl));
     }
 }

@@ -1,8 +1,10 @@
 package Boundary;
 
 import Control.AppControl;
+import Entity.Portfolio;
 
 import javax.swing.*;
+import java.util.List;
 
 public class MainBoundary extends JPanel {
 
@@ -15,5 +17,7 @@ public class MainBoundary extends JPanel {
 
         JLabel label = new JLabel("Boundary");
         add(label);
+
+        List<Portfolio> portfolioList = appControl.getPortfolioList();
     }
 }

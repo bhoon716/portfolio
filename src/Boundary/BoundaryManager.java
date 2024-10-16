@@ -1,5 +1,7 @@
 package Boundary;
 
+import Logic.ApiLogic;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +16,8 @@ public class BoundaryManager {
         frame.setLayout(new FlowLayout());
         frame.setPreferredSize(new Dimension(800, 600));
         frame.setVisible(true);
+
+        ApiLogic.getCurrentValue("QQQ");
     }
 
     public void switchBoundary(JPanel newBoundary) {
