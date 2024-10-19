@@ -1,14 +1,15 @@
 package Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Portfolio {
     private String name;
     private List<Asset> assets;
 
-    public Portfolio(String name, List<Asset> assets) {
+    public Portfolio(String name) {
         this.name = name;
-        this.assets = assets;
+        this.assets = new ArrayList<>();
     }
 
     public String getName() {
@@ -25,6 +26,10 @@ public class Portfolio {
 
     public void removeAsset(Asset asset) {
         this.assets.remove(asset);
+    }
+
+    public List<Asset> getAllAsset(){
+        return this.assets;
     }
 
     public Double calculatePortfolioValue() {

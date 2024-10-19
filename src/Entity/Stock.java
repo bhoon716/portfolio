@@ -1,5 +1,7 @@
 package Entity;
 
+import Logic.ApiLogic;
+
 public class Stock extends Asset{
 
     public Stock(String symbol, Double quantity, Double purchasePrice, Double currentPrice) {
@@ -8,7 +10,7 @@ public class Stock extends Asset{
 
     @Override
     public Double getValue() {
-        return 0.0;
+        return ApiLogic.getCurrentValue(getSymbol());
     }
 
 }

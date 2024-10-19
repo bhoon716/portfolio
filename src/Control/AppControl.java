@@ -1,19 +1,24 @@
 package Control;
 
-import Entity.Portfolio;
 
-import java.util.ArrayList;
+import Entity.Portfolio;
+import Logic.PortfolioManager;
+
 import java.util.List;
 
 public class AppControl {
 
-    private List<Portfolio> portfolioList;
+    private final PortfolioManager portfolioManager;
 
-    public AppControl() {
-        this.portfolioList = new ArrayList<>();
+    public AppControl(PortfolioManager portfolioManager) {
+        this.portfolioManager = portfolioManager;
     }
 
-    public List<Portfolio> getPortfolioList() {
-        return portfolioList;
+    public void addPortfolio(String name) {
+        portfolioManager.addPortfolio(name);
+    }
+
+    public List<Portfolio> getPortfolios(){
+        return portfolioManager.getPortfolios();
     }
 }

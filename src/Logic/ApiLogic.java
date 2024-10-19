@@ -35,7 +35,8 @@ public class ApiLogic {
                 // CSV 형식으로 받은 데이터를 처리
                 String[] data = inputLine.split(",");
                 if (data.length > 1) {
-                    return Double.parseDouble(data[1]); // CSV의 두 번째 컬럼이 가격 (0: timestamp, 1: open, 2: high, 3: low, 4: close, 5: volume)
+                    // CSV의 두 번째 컬럼이 가격 (0: timestamp, 1: open, 2: high, 3: low, 4: close, 5: volume)
+                    return Double.parseDouble(data[1]);
                 }
             }
 

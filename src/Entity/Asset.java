@@ -13,5 +13,13 @@ public abstract class Asset {
         this.currentPrice = currentPrice;
     }
 
+    public Asset(String symbol){
+        this.symbol = symbol;
+    }
+
+    public String getSymbol(){
+        return this.symbol;
+    }
+
     public abstract Double getValue();
 }
