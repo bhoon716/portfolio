@@ -1,24 +1,24 @@
 package Control;
 
+import Boundary.MainBoundary;
+import Logic.PortfolioLogic;
 
-import Entity.Portfolio;
-import Logic.PortfolioManager;
-
-import java.util.List;
+import javax.swing.*;
 
 public class AppControl {
 
-    private final PortfolioManager portfolioManager;
+    private final PortfolioLogic portfolioLogic;
+    private MainBoundary mainBoundary;
 
-    public AppControl(PortfolioManager portfolioManager) {
-        this.portfolioManager = portfolioManager;
+    public AppControl(){
+        this.portfolioLogic = new PortfolioLogic();
     }
 
-    public void addPortfolio(String name) {
-        portfolioManager.addPortfolio(name);
+    public void showBoundary(JPanel panel){
+        mainBoundary.switchBoundary(panel);
     }
 
-    public List<Portfolio> getPortfolios(){
-        return portfolioManager.getPortfolios();
+    public void showMainBoundary(){
+        mainBoundary = new MainBoundary(this);
     }
 }

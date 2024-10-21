@@ -7,26 +7,21 @@ import java.awt.*;
 
 public class StockBoundary extends JPanel {
 
-    private final BoundaryManager boundaryManager;
-    private AppControl appControl;
+    private final AppControl appControl;
 
-    public StockBoundary(BoundaryManager boundaryManager, AppControl appControl) {
-        this.boundaryManager = boundaryManager;
+    public StockBoundary(AppControl appControl) {
         this.appControl = appControl;
 
-        setSize(800, 600);
-        setLayout(new FlowLayout());
-
-        //임시
-        JTextField textField = new JTextField(20);
-        add(textField);
-
-        JButton button = new JButton("switch MainBoundary");
-        add(button);
-        button.addActionListener(e -> switchMainBoundary());
+        initUI();
     }
 
-    public void switchMainBoundary() {
-        boundaryManager.switchBoundary(new MainBoundary(this.boundaryManager, this.appControl));
+    public void initUI(){
+        JLabel title = new JLabel("StockBoundary");
+        add(title);
+
+        JButton portfolioButton = new JButton("Go to portfolio view");
+        portfolioButton.addActionListener(e -> appControl.showBoundary(new PortfolioBoundary(appControl)));
+        add(portfolioButton);
     }
+
 }

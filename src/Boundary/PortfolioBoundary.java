@@ -1,13 +1,15 @@
 package Boundary;
 
+import Control.AppControl;
+
 import javax.swing.*;
 
 public class PortfolioBoundary extends JPanel {
 
-    private final BoundaryManager boundaryManager;
+    private final AppControl appControl;
 
-    public PortfolioBoundary(BoundaryManager boundaryManager) {
-        this.boundaryManager = boundaryManager;
+    public PortfolioBoundary(AppControl appControl) {
+        this.appControl = appControl;
 
         JLabel label = new JLabel("Portfolio");
         add(label);

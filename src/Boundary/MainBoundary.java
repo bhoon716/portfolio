@@ -1,59 +1,52 @@
 package Boundary;
 
 import Control.AppControl;
-import Entity.Portfolio;
 
 import javax.swing.*;
 
-public class MainBoundary extends JPanel {
+public class MainBoundary extends JFrame {
 
-    private final BoundaryManager boundaryManager;
     private final AppControl appControl;
 
-    private DefaultListModel<String> portfolioModel = new DefaultListModel<>();
+    private JPanel currentPanel;
 
-    public MainBoundary(BoundaryManager boundaryManager, AppControl appControl) {
-        this.boundaryManager = boundaryManager;
+    public MainBoundary(AppControl appControl) {
         this.appControl = appControl;
 
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setVisible(true);
+        setTitle("Portfolio Manager");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 400);
 
         initUI();
         updatePortfolioList();
+        setVisible(true);
     }
 
     private void initUI() {
+        currentPanel = new JPanel();
+
         JLabel label = new JLabel("Main Boundary");
-        add(label);
+        currentPanel.add(label);
 
-        JList<String> portfolioList = new JList<>(portfolioModel);
-        JScrollPane scrollPane = new JScrollPane(portfolioList);
-        add(scrollPane);  // 초기 포트폴리오 리스트 추가
+        JButton button = new JButton("Portfolio");
+        button.addActionListener(e -> appControl.showBoundary(new PortfolioBoundary(appControl)));
+        currentPanel.add(button);
 
-        JTextField textField = new JTextField();
-        add(textField);
-
-        JButton addButton = new JButton("Add");
-        addButton.addActionListener(e -> addPortfolio(textField.getText()));
-        add(addButton);
-
-        JButton button = new JButton("Button");
-        button.addActionListener(e -> boundaryManager.switchBoundary(new StockBoundary(this.boundaryManager, this.appControl)));
-        add(button);
+        add(currentPanel);
     }
 
-    // 포트폴리오 추가
-    private void addPortfolio(String name) {
-        appControl.addPortfolio(name);
-        updatePortfolioList();  // 새 포트폴리오 목록을 업데이트
+    public void updatePortfolioList(){
+
     }
 
-    // 포트폴리오 목록 업데이트
-    private void updatePortfolioList() {
-        portfolioModel.clear();  // 기존 포트폴리오 목록을 지우고 새로 추가
-        for (Portfolio portfolio : appControl.getPortfolios()) {
-            portfolioModel.addElement(portfolio.getName());  // 포트폴리오 이름 추가
+    public void switchBoundary(JPanel panel) {
+        if (currentPanel != null) {
+            remove(currentPanel);
         }
+        currentPanel = panel;
+        add(panel);
+        revalidate();
+        repaint();
+        setVisible(true);
     }
 }
