@@ -2,7 +2,6 @@ package Boundary;
 
 import Control.AssetControl;
 import Control.PortfolioControl;
-import Entity.Asset;
 import Entity.AssetInfo;
 import Entity.AssetType;
 import Entity.Portfolio;
@@ -98,7 +97,7 @@ public class MainBoundary extends JFrame {
         try {
             if (selectedType != null && !symbol.isEmpty()) {
                 AssetInfo assetInfo = assetController.getAssetInfo(selectedType, symbol);
-                new AssetBoundary(assetController, assetInfo).setVisible(true);
+                new AssetBoundary(assetInfo).setVisible(true);
             }
         } catch (Exception e) {
             e.printStackTrace();
