@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a8114c-a28a-4719-b2eb-9b81f25f231f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio_manager.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/BounbaryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/MainBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="69a8114c-a28a-4719-b2eb-9b81f25f231f" name="Changes" comment="refactor: MainBoundary 에서 Asset Searching 리팩토링">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/AssetBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/AssetBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/MainBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MainBoundary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,35 +18,89 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bhoon716&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bhoon716/portfolio.git&quot;,
+    &quot;accountId&quot;: &quot;0e2c90d3-8fa4-4dff-a11d-736f1a2b9179&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2nT7Cxl34uSP1p09AJq0g7KqVZJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;bhoon&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bhoon/Library/CloudStorage/OneDrive-전북대학교/00.전북대학교/01.3학년 2학기/02.소프트웨어시스템분석및설계/소시분_팀프로젝트/project/portfolio_manager&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.07087171&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Control" />
+      <recent name="Boundary" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Entity" />
+      <recent name="Logic" />
+      <recent name="Control" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="portfolio_manager" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <module name="portfolio_manager" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,7 +118,57 @@
       <option name="presentableId" value="Default" />
       <updated>1728985089810</updated>
       <workItem from="1728985090740" duration="3367000" />
+      <workItem from="1728988641327" duration="726000" />
+      <workItem from="1728994156514" duration="3289000" />
+      <workItem from="1728997454689" duration="5406000" />
+      <workItem from="1729063546700" duration="4019000" />
+      <workItem from="1729093997514" duration="3648000" />
+      <workItem from="1729142021690" duration="4115000" />
+      <workItem from="1729209847503" duration="1112000" />
+      <workItem from="1729211608558" duration="908000" />
+      <workItem from="1729213023569" duration="2047000" />
+      <workItem from="1729221730687" duration="4915000" />
+      <workItem from="1729350587262" duration="3114000" />
+      <workItem from="1729354314473" duration="4895000" />
+      <workItem from="1729480508616" duration="8785000" />
+      <workItem from="1729521330015" duration="6722000" />
+      <workItem from="1729557710434" duration="15502000" />
+      <workItem from="1729646098000" duration="5983000" />
+      <workItem from="1729815629358" duration="4879000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: 주식 가격 api로 받아오는 기능 추가">
+      <option name="closed" value="true" />
+      <created>1729094721333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729094721333</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: 포트폴리오 생성, 포트폴리오에 자산 추가 기능">
+      <option name="closed" value="true" />
+      <created>1729350900757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729350900757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor: 뷰 구조 리팩토링">
+      <option name="closed" value="true" />
+      <created>1729485780947</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729485780947</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor: MainBoundary 에서 Asset Searching 리팩토링">
+      <option name="closed" value="true" />
+      <created>1729818714731</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729818714731</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,6 +184,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: 주식 가격 api로 받아오는 기능 추가" />
+    <MESSAGE value="feat: 포트폴리오 생성, 포트폴리오에 자산 추가 기능" />
+    <MESSAGE value="refactor: 뷰 구조 리팩토링" />
+    <MESSAGE value="refactor: MainBoundary 에서 Asset Searching 리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: MainBoundary 에서 Asset Searching 리팩토링" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
