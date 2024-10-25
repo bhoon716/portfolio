@@ -1,25 +1,20 @@
 package Entity;
 
-public abstract class Asset {
-    private String symbol;       // 자산의 심볼 (e.g., AAPL, BTC)
-    private Double quantity;     // 보유한 수량
-    private Double purchasePrice;
-    private Double currentPrice;
+public interface Asset {
 
-    public Asset(String symbol, Double quantity, Double purchasePrice, Double currentPrice) {
-        this.symbol = symbol;
-        this.quantity = quantity;
-        this.purchasePrice = purchasePrice;
-        this.currentPrice = currentPrice;
-    }
+    AssetType getAssetType();
 
-    public Asset(String symbol){
-        this.symbol = symbol;
-    }
+    String getSymbol();
 
-    public String getSymbol(){
-        return this.symbol;
-    }
+    double getEvaluation();
 
-    public abstract Double getValue();
+    double getQuantity();
+
+    double getPrice();
+
+    double getAveragePrice();
+
+    double getProfitLoss();
+
+    double getChange();
 }

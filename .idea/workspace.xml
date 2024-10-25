@@ -4,15 +4,27 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a8114c-a28a-4719-b2eb-9b81f25f231f" name="Changes" comment="feat: 포트폴리오 생성, 포트폴리오에 자산 추가 기능">
-      <change afterPath="$PROJECT_DIR$/src/Logic/PortfolioLogic.java" afterDir="false" />
+    <list default="true" id="69a8114c-a28a-4719-b2eb-9b81f25f231f" name="Changes" comment="refactor: 뷰 구조 리팩토링">
+      <change afterPath="$PROJECT_DIR$/src/Control/AssetControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Control/PortfolioControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/AssetInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/AssetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Cryptocurrency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/StockInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/AssetLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/BoundaryManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/MainBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MainBoundary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/PortfolioBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/PortfolioBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StockBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StockBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/AppControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/AppControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/PortfolioManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StockBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/AssetBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/AppControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Asset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/ApiLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/PortfolioLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/PortfolioLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/StockLogic.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -43,6 +55,9 @@
     &quot;accountId&quot;: &quot;0e2c90d3-8fa4-4dff-a11d-736f1a2b9179&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -77,6 +92,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Control" />
       <recent name="Boundary" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Entity" />
+      <recent name="Logic" />
+      <recent name="Control" />
     </key>
   </component>
   <component name="RunManager">
@@ -128,7 +148,11 @@
       <workItem from="1729221730687" duration="4915000" />
       <workItem from="1729350587262" duration="3114000" />
       <workItem from="1729354314473" duration="4895000" />
-      <workItem from="1729480508616" duration="2565000" />
+      <workItem from="1729480508616" duration="8785000" />
+      <workItem from="1729521330015" duration="6722000" />
+      <workItem from="1729557710434" duration="15502000" />
+      <workItem from="1729646098000" duration="5983000" />
+      <workItem from="1729815629358" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 주식 가격 api로 받아오는 기능 추가">
       <option name="closed" value="true" />
@@ -146,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729350900757</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor: 뷰 구조 리팩토링">
+      <option name="closed" value="true" />
+      <created>1729485780947</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729485780947</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +198,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 주식 가격 api로 받아오는 기능 추가" />
     <MESSAGE value="feat: 포트폴리오 생성, 포트폴리오에 자산 추가 기능" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 포트폴리오 생성, 포트폴리오에 자산 추가 기능" />
+    <MESSAGE value="refactor: 뷰 구조 리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 뷰 구조 리팩토링" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

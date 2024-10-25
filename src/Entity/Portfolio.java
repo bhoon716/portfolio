@@ -16,27 +16,25 @@ public class Portfolio {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public List<Asset> getAssets() {
+        return assets;
     }
 
     public void addAsset(Asset asset) {
-        this.assets.add(asset);
+        assets.add(asset);
     }
 
     public void removeAsset(Asset asset) {
-        this.assets.remove(asset);
+        assets.remove(asset);
     }
 
-    public List<Asset> getAllAsset(){
-        return this.assets;
-    }
-
-    public Double calculatePortfolioValue() {
-        double totalValue = 0;
+    public double getTotalValue() {
+        double total = 0;
         for (Asset asset : assets) {
-            totalValue += asset.getValue();
+            total += asset.getAveragePrice();
         }
-        return totalValue;
+        return total;
     }
+
+    // Additional methods for profit/loss calculations
 }

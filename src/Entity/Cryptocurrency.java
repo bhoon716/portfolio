@@ -2,30 +2,27 @@ package Entity;
 
 import Logic.ApiService;
 
-public class Stock implements Asset {
+public class Cryptocurrency implements Asset {
     private String symbol;
-    private double averagePrice;  // 매입 평균 가격
+    private double averagePrice;  // 매입 시의 평균 단가
     private double price;         // 현재 가격
     private double quantity;      // 보유 수량
 
-    public Stock(String symbol, double averagePrice, double quantity) {
+    public Cryptocurrency(String symbol, double averagePrice, double quantity) {
         this.symbol = symbol;
         this.averagePrice = averagePrice;
+        this.price = ApiService.getCurrentCryptoPrice(symbol);
         this.quantity = quantity;
-        this.price = ApiService.getCurrentStockPrice(symbol);
     }
 
-    public Stock(String symbol) {
+    public Cryptocurrency(String symbol) {
         this.symbol = symbol;
-        this.price = ApiService.getCurrentStockPrice(symbol);
-    }
-
-    public Stock() {
+        this.price = ApiService.getCurrentCryptoPrice(symbol);
     }
 
     @Override
     public AssetType getAssetType() {
-        return AssetType.STOCK;
+        return AssetType.CRYPTOCURRENCY;
     }
 
     @Override
@@ -35,6 +32,7 @@ public class Stock implements Asset {
 
     @Override
     public double getEvaluation() {
+        // 평가 금액 = 현재 가격 * 수량
         return quantity * getPrice();
     }
 
@@ -45,7 +43,7 @@ public class Stock implements Asset {
 
     @Override
     public double getPrice() {
-        price = ApiService.getCurrentStockPrice(symbol);
+        price = ApiService.getCurrentCryptoPrice(symbol);
         return price;
     }
 
